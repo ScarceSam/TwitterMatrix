@@ -162,7 +162,7 @@ color = {' ': '000000', '!': 'FFFFFF',
 ########### getting mentions ############
 
 def getAllNewMentions(lastTweetID):
-	#lastTweetID = 1221548022816858112
+
 	lastTweetFound = 0
 	data = []
 	oldestTweetID = 0
@@ -180,20 +180,4 @@ def getAllNewMentions(lastTweetID):
 				lastTweetFound += 1
 				data.pop()
 
-	#print(lastTweetFound) #dev
-
-	number = 0 #testing
-
-	for item in data: #testing
-		if number == item['id']: #testing
-			print('FAIL') #testing
-		number = item['id'] #testing
-
-
-	#if !lastTweetFound:
-
-	#print(len(data)) #dev
-
-	#for item in data: #reversed(data):
-	#	print(item['id'], '\n', item['full_text'], end='\n\n')
 	return data
