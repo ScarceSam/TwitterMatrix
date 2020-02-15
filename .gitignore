@@ -1,0 +1,5 @@
+auth.py
+__pycache__
+*.db
+notes.txt
+printout.py
