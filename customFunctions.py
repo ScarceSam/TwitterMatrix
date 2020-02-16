@@ -181,3 +181,14 @@ def getAllNewMentions(lastTweetID):
 				data.pop()
 
 	return data
+
+
+def removeFluff(mentions):
+
+	data = []
+	for i in range(len(mentions)):
+		message = mentions.pop(0)
+		if(0 == message['full_text'].find('@' + user_name)):
+			data.append(message)
+
+	return data

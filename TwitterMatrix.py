@@ -30,13 +30,9 @@ while(go == 1):
 
 	#mentions = removeFluff(mentions)
 
-	for i in range(len(mentions)):
-		message = mentions.pop(0)
-		user_name = '@' + cF.user_name
-		if(0 == message['full_text'].find(user_name)):
-			print(message['full_text'])
+	new_perm_display = 0 #cF.permCheck(mentions)
 
-#	print(mentions)
+	mentions = cF.removeFluff(mentions)
 
 		#save last tweet id pulled.
 		#last_pulled = last tweet id in mentions
