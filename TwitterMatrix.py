@@ -36,16 +36,14 @@ while(go == 1):
 	#save last tweet id pulled.
 	#last_pulled = last tweet id in mentions
 
-
-
-	#clean up data, tweet save into an object save only tweets that have @LED_matrix at beginning of thread
-	
-
-	#        save tweet id if it's is from @scarcesam and says "@LED_Matrix... perm display this one!"
-
 	#        thread_lenght, tweet_datetime, tweet_id, user_id, user_handle, tweet_data[8][256][3]
 
-	#        convert each charater into RGB values
+	#pull oldest tweet out of list
+	next_tweet = mentions.pop()
+
+	#convert each charater into RGB values
+	next_tweet_RGB = cF.RGBize(next_tweet)
+
 
 
 

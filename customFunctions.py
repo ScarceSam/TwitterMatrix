@@ -192,3 +192,22 @@ def removeFluff(mentions):
 			data.append(message)
 
 	return data
+
+
+def RGBize(tweet_item):
+
+	data = []
+	rgb_values = []
+
+	handle_length = len('@' + user_name)
+
+	for i in range(handle_length + 1, len(tweet_item['full_text'])):
+		data += tweet_item['full_text'][i]
+
+	for i in range(256):
+		if i >= len(data):
+			rgb_values.append('000000')
+		else:
+			rgb_values.append(color.get(data[i]))
+
+	return rgb_values
