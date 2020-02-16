@@ -1,6 +1,7 @@
 import customFunctions as cF
 
 last_pulled = 1221548022816858112
+last_tweet = 0
 new_perm_display = 0
 tweet_queue = 0
 
@@ -20,22 +21,20 @@ while(go == 1):
 	if not tweet_queue:
 
 		#only search back to the last pulled tweet if the all tweets sucessfully processed
-		if last_pulled != 0:
+		if last_tweet == 0:
 			last_tweet = last_pulled
 
 		#stop pulling mentions when a mention returned has a reply from app or it was alreay pulled
 		mentions = cF.getAllNewMentions(last_tweet)
 
-	new_perm_display = 0 #cF.permCheck(mentions)
-
-	#mentions = removeFluff(mentions)
+		last_tweet = mentions[0]['id']
 
 	new_perm_display = 0 #cF.permCheck(mentions)
 
 	mentions = cF.removeFluff(mentions)
 
-		#save last tweet id pulled.
-		#last_pulled = last tweet id in mentions
+	#save last tweet id pulled.
+	#last_pulled = last tweet id in mentions
 
 
 
