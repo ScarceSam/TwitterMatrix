@@ -12,11 +12,11 @@ tweet_queue = 0
 #	last_pulled = file.last_pulled
 #	if perm_display = file.permdisplay:
 #		new_perm_display = 1
-go = 1
+go = 1 #dev
 
 while(go == 1):
 
-	go = 0
+	go = 0 #dev
 	#if message que is empty pull mentions
 	if not tweet_queue:
 
@@ -27,16 +27,14 @@ while(go == 1):
 		#stop pulling mentions when a mention returned has a reply from app or it was alreay pulled
 		mentions = cF.getAllNewMentions(last_tweet)
 
-		last_tweet = mentions[0]['id']
+		#save last ID pulled
+		last_pulled = mentions[0]['id']
 
 	new_perm_display = 0 #cF.permCheck(mentions)
 
+	#remove all tweets from list that are not direct mentions
 	mentions = cF.removeFluff(mentions)
 
-	#save last tweet id pulled.
-	#last_pulled = last tweet id in mentions
-
-	#        thread_lenght, tweet_datetime, tweet_id, user_id, user_handle, tweet_data[8][256][3]
 
 	#pull oldest tweet out of list
 	next_tweet = mentions.pop()
@@ -46,18 +44,17 @@ while(go == 1):
 
 
 
+	#is matrix attached? which serial port? available?
+	#
 
-	#reply in cronological order
+	#send serial data
+	#
 
-	#tell matrix an image is comming through.
+	#wait for display confirmation. take photo
+	#
 
-	#        send serial data
-
-	#        wait for display confirmation.
-
-	#        take photo
-
-	#        send photo taken message.
+	#send photo taken message.
+	#
 
 	#        send reply to original tweet
 
