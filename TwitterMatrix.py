@@ -30,19 +30,20 @@ while(go == 1):
 		#save last ID pulled
 		last_pulled = mentions[0]['id']
 
+		tweet_queue = len(mentions)
+
 	new_perm_display = 0 #cF.permCheck(mentions)
 
 	#remove all tweets from list that are not direct mentions
 	mentions = cF.removeFluff(mentions)
 
+	tweet_queue = len(mentions)
 
 	#pull oldest tweet out of list
 	next_tweet = mentions.pop()
 
 	#convert each charater into RGB values
 	next_tweet_RGB = cF.RGBize(next_tweet)
-
-
 
 	#is matrix attached? which serial port? available?
 	#
