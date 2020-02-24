@@ -4,6 +4,8 @@ last_pulled = 1221548022816858112
 last_tweet = 0
 new_perm_display = 0
 tweet_queue = 0
+loop_pause = 10
+
 
 #check for save file
 #if save file:
@@ -87,4 +89,4 @@ while(go == 1):
 				else:
 					print(next_tweet_RGB[j + (16 * i)], end = ' , ')
 
-
+	time.sleep(loop_pause)
