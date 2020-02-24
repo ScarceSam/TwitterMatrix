@@ -25,17 +25,19 @@ while(go == 1):
 		#stop pulling mentions when a mention returned has a reply from app or it was alreay pulled
 		mentions = cF.getAllNewMentions(last_tweet)
 
-		#save last ID pulled
-		last_pulled = mentions[0]['id']
+		if len(mentions):
 
-		tweet_queue = len(mentions)
+			#save last ID pulled
+			last_pulled = mentions[0]['id']
 
-		new_perm_display = 0 #cF.permCheck(mentions)
+			tweet_queue = len(mentions)
 
-		#remove all tweets from list that are not direct mentions
-		mentions = cF.removeFluff(mentions)
+			new_perm_display = 0 #cF.permCheck(mentions)
 
-		tweet_queue = len(mentions)
+			#remove all tweets from list that are not direct mentions
+			mentions = cF.removeFluff(mentions)
+
+			tweet_queue = len(mentions)
 
 	if tweet_queue:
 
