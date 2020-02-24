@@ -208,6 +208,9 @@ def RGBize(tweet_item):
 		if i >= len(data):
 			rgb_values.append('000000')
 		else:
-			rgb_values.append(color.get(data[i]))
+			rgb_value = color.get(data[i])
+			if rgb_value == None:
+				rgb_value = '000000'
+			rgb_values.append(rgb_value)
 
 	return rgb_values
