@@ -1,4 +1,5 @@
 import customFunctions as cF
+import time
 
 last_pulled = 1221548022816858112
 last_tweet = 0
@@ -15,7 +16,7 @@ loop_pause = 10
 #	if perm_display = file.permdisplay:
 #		new_perm_display = 1
 
-while(go == 1):
+while(1):
 
 	#if message que is empty pull mentions
 	if not tweet_queue:
