@@ -12,11 +12,9 @@ tweet_queue = 0
 #	last_pulled = file.last_pulled
 #	if perm_display = file.permdisplay:
 #		new_perm_display = 1
-go = 1 #dev
 
 while(go == 1):
 
-	go = 0 #dev
 	#if message que is empty pull mentions
 	if not tweet_queue:
 
