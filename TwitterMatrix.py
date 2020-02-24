@@ -44,6 +44,8 @@ while(go == 1):
 		#pull oldest tweet out of list
 		next_tweet = mentions.pop()
 
+		tweet_queue = len(mentions)
+
 		#convert each charater into RGB values
 		next_tweet_RGB = cF.RGBize(next_tweet)
 
@@ -60,6 +62,8 @@ while(go == 1):
 		#send photo and message "Processing complete ;P"
 
 		#quote tweet "-username'
+
+		last_tweet = next_tweet['id']
 
 		#if new_permdisplay
 
