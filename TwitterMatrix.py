@@ -30,57 +30,55 @@ while(go == 1):
 
 		tweet_queue = len(mentions)
 
-	new_perm_display = 0 #cF.permCheck(mentions)
+		new_perm_display = 0 #cF.permCheck(mentions)
 
-	#remove all tweets from list that are not direct mentions
-	mentions = cF.removeFluff(mentions)
+		#remove all tweets from list that are not direct mentions
+		mentions = cF.removeFluff(mentions)
 
-	tweet_queue = len(mentions)
+		tweet_queue = len(mentions)
 
-	#pull oldest tweet out of list
-	next_tweet = mentions.pop()
+	if tweet_queue:
 
-	#convert each charater into RGB values
-	next_tweet_RGB = cF.RGBize(next_tweet)
+		#pull oldest tweet out of list
+		next_tweet = mentions.pop()
 
-	#is matrix attached? which serial port? available?
-	#
+		#convert each charater into RGB values
+		next_tweet_RGB = cF.RGBize(next_tweet)
 
-	#send serial data
-	#
+		#is matrix attached? which serial port? available?
 
-	#wait for display confirmation. take photo
-	#
+		#send serial data
 
-	#send photo taken message.
-	#
+		#wait for display confirmation. take photo
 
-	#        send reply to original tweet
+		#send photo taken message.
 
-	#        send photo and message "Processing complete ;P"
+		#send reply to original tweet
 
-	#        quote tweet "-username'
+		#send photo and message "Processing complete ;P"
 
-	#if new_permdisplay
+		#quote tweet "-username'
 
-	#        send perm display to led matrix.
+		#if new_permdisplay
 
-	#save perm_display tweet and last tweet.
+			#send perm display to led matrix.
 
-	#        delay one minute
+			#save perm_display tweet and last tweet.
 
-	#        blink LED every 2 seconds.
+		#delay one minute
+
+		#blink LED every 2 seconds.
 
 
-	#Print(tweet info)
-	print(len(mentions))
-	print(next_tweet)
-	#print(next_tweet_RGB)
-	for i in range(16):
-		for j in range(16):
-			if j == 15:
-				print(next_tweet_RGB[j + (16 * i)])
-			else:
-				print(next_tweet_RGB[j + (16 * i)], end = ' , ')
+		#Print(tweet info)
+		print(len(mentions))
+		print(next_tweet)
+		#print(next_tweet_RGB)
+		for i in range(16):
+			for j in range(16):
+				if j == 15:
+					print(next_tweet_RGB[j + (16 * i)])
+				else:
+					print(next_tweet_RGB[j + (16 * i)], end = ' , ')
 
 
