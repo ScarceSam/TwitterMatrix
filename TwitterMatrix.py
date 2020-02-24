@@ -74,4 +74,15 @@ while(go == 1):
 	#        blink LED every 2 seconds.
 
 
+	#Print(tweet info)
+	print(len(mentions))
+	print(next_tweet)
+	#print(next_tweet_RGB)
+	for i in range(16):
+		for j in range(16):
+			if j == 15:
+				print(next_tweet_RGB[j + (16 * i)])
+			else:
+				print(next_tweet_RGB[j + (16 * i)], end = ' , ')
+
 
